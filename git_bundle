@@ -1,0 +1,14 @@
+git bundle create <Name of pack file> HEAD master
+# Here you are creating a .pack file which you can share it with any person and once he cloned it he will have all the contents of your repo in his local repo
+
+git clone <Name of the pack file> <Folder Name To which it should be cloned>
+#This command will clone the original repo to your local repo
+
+git bundle create <Name of the pack file> master ^<Previous commit ID of the commit you want>
+#This command will create a pack file for the new changes made. That's why we are mentioning the previous commit id after which the commit, the commits should be packed.
+
+git bundle verify <Name of the pack file>
+#This will verify whether it's a valid to fetch or pull the commits. The ref commit ID should be the latest commit id in your repo
+
+git fetch <Name of the pack file> master:<New brach name>
+#This will fetch the commits from the pack file and creates a new branch and will be stored into new branch 

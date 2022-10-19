@@ -1,0 +1,12 @@
+This command is to check in which commit the error occured by taking few random ccommits and commiting them.We need to check our website and should give feedback whether it's good or bad. We need to provide the good commit(Commit when there is no issue in the program). If you don't know the bad(The commit from where the issue started), you can leave it blank. By default it will take the current commit. 
+
+git bisect start
+#To initiate the process
+
+git bisect good <Commit ID at which the website worked without any issues>
+#Need to provide the good commit ID
+
+git bisect bad <You can leave this blank or give ID from which you're are thinking that issue might happen>
+#Need to provide the bad commit ID or leave it blank, it will take the current commit
+
+After each commit iteraction, you need give it a feedback whether it's a bad commit or good commit
